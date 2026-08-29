@@ -691,11 +691,48 @@ footer p {
 
 
 @media (max-width: 750px) {
+   @media (max-width: 750px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    body,
+    main,
+    header,
+    footer,
+    section {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .header,
+    .hero,
+    .advantages,
+    .services,
+    .about,
+    .why,
+    .contact,
+    footer {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
    /* MOBILE: Leistungen */
 .service-grid {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: 1fr !important;
+
     width: 100%;
     max-width: 100%;
+
     gap: 18px;
 }
 
@@ -703,8 +740,11 @@ footer p {
     width: 100%;
     max-width: 100%;
     min-width: 0;
-    padding: 28px 22px;
-    overflow: hidden;
+
+    min-height: auto;
+    padding: 30px 25px;
+
+    margin: 0;
 }
 
 .service-card h3,
