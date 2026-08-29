@@ -69,14 +69,9 @@ h3 {
     position: sticky;
     top: 0;
     z-index: 1000;
-}
 
-
-.logo {
-    display: flex;
-    flex-direction: column;
-    line-height: 1;
-}
+.logo span
+   
 
 
 .logo span {
@@ -84,21 +79,17 @@ h3 {
     font-size: 34px;
     font-weight: 800;
     letter-spacing: 1px;
+
+.logo {
+    display: flex;
+    align-items: center;
 }
 
-
-.logo span::first-letter {
-    color: white;
+.logo img {
+    width: 165px;
+    height: auto;
+    display: block;
 }
-
-
-.logo small {
-    color: var(--gray);
-    margin-top: 5px;
-    font-size: 11px;
-    letter-spacing: 1px;
-}
-
 
 .navigation {
     display: flex;
