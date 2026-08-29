@@ -1,1 +1,735 @@
 
+/* ========================================
+   S&MOTION GMBH – WEBSITE
+======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+
+:root {
+    --orange: #ff7200;
+    --orange-dark: #d85f00;
+    --black: #08090b;
+    --dark: #111418;
+    --dark-light: #1a1e23;
+    --white: #ffffff;
+    --gray: #a7adb5;
+    --light: #f2f3f5;
+}
+
+
+/* GRUNDEINSTELLUNGEN */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: "Inter", Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+h1,
+h2,
+h3 {
+    font-family: "Barlow Condensed", Arial, sans-serif;
+}
+
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+.header {
+    height: 88px;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(5, 6, 8, 0.96);
+    border-bottom: 1px solid #22262c;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+
+.logo span {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+
+.logo span::first-letter {
+    color: white;
+}
+
+
+.logo small {
+    color: var(--gray);
+    margin-top: 5px;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+
+.navigation {
+    display: flex;
+    gap: 32px;
+}
+
+
+.navigation a {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #c5c8cc;
+    transition: 0.3s;
+}
+
+
+.navigation a:hover {
+    color: var(--orange);
+}
+
+
+.header-button {
+    background: var(--orange);
+    color: white;
+    padding: 15px 24px;
+
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+
+.header-button:hover {
+    background: white;
+    color: black;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 6, 8, 0.98) 0%,
+            rgba(5, 6, 8, 0.90) 35%,
+            rgba(5, 6, 8, 0.35) 70%,
+            rgba(5, 6, 8, 0.10) 100%
+        ),
+        url("images/industrie.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    padding: 90px 7%;
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+}
+
+
+.eyebrow {
+    color: var(--orange);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+
+.hero h1 {
+    font-size: clamp(58px, 6vw, 92px);
+    line-height: 0.92;
+    letter-spacing: 1px;
+    font-weight: 800;
+}
+
+
+.hero h1 span,
+.about h2 span {
+    color: var(--orange);
+}
+
+
+.hero-description {
+    margin-top: 28px;
+    max-width: 560px;
+
+    color: #d2d5d9;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 38px;
+}
+
+
+.button {
+    display: inline-block;
+
+    padding: 17px 28px;
+
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+
+.primary {
+    background: var(--orange);
+    color: white;
+}
+
+
+.primary:hover {
+    background: white;
+    color: black;
+    transform: translateY(-3px);
+}
+
+
+.secondary {
+    border: 1px solid #7d8288;
+}
+
+
+.secondary:hover {
+    border-color: var(--orange);
+    color: var(--orange);
+}
+
+
+/* ========================================
+   VORTEILE
+======================================== */
+
+.advantages {
+    background: linear-gradient(90deg, #101317, #171a1f);
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    padding: 35px 7%;
+}
+
+
+.advantage {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 12px 25px;
+    border-right: 1px solid #34383e;
+}
+
+
+.advantage:last-child {
+    border-right: none;
+}
+
+
+.icon {
+    color: var(--orange);
+    font-size: 40px;
+}
+
+
+.advantage h3 {
+    font-family: "Inter";
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+
+.advantage p {
+    margin-top: 5px;
+    color: #9da2a9;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   LEISTUNGEN
+======================================== */
+
+.services {
+    background: #f3f4f5;
+    color: #17191c;
+
+    padding: 90px 7%;
+}
+
+
+.section-heading {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 55px;
+}
+
+
+.section-heading > p {
+    color: var(--orange);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+
+.section-heading h2 {
+    font-size: clamp(34px, 4vw, 52px);
+    line-height: 1;
+}
+
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+
+.service-card {
+    background: white;
+    padding: 35px 28px;
+
+    border-bottom: 4px solid transparent;
+
+    min-height: 330px;
+
+    transition: 0.3s;
+}
+
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-bottom-color: var(--orange);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+
+.service-icon {
+    color: var(--orange);
+    font-size: 46px;
+    margin-bottom: 24px;
+}
+
+
+.service-card h3 {
+    font-size: 28px;
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+
+.service-card ul {
+    list-style: none;
+}
+
+
+.service-card li {
+    font-size: 13px;
+    margin-bottom: 13px;
+    color: #535860;
+    line-height: 1.4;
+}
+
+
+.service-card li::before {
+    content: "•";
+    color: var(--orange);
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+
+/* Fördertechnik leicht hervorheben */
+
+.service-card.featured {
+    border-top: 4px solid var(--orange);
+}
+
+
+/* ========================================
+   ÜBER UNS
+======================================== */
+
+.about {
+    background: #0d1014;
+
+    min-height: 500px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+.about-image {
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.15),
+            rgba(0,0,0,0.45)
+        ),
+        url("images/industrie-team.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+.about-content {
+    padding: 90px 10%;
+}
+
+
+.about h2 {
+    font-size: clamp(42px, 4vw, 64px);
+    line-height: 0.95;
+}
+
+
+.about-content > p:not(.eyebrow) {
+    color: #b8bdc3;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-top: 24px;
+}
+
+
+.about-content .button {
+    margin-top: 32px;
+}
+
+
+/* ========================================
+   WARUM S&MOTION
+======================================== */
+
+.why {
+    background: white;
+    color: #16191d;
+
+    padding: 90px 7%;
+}
+
+
+.why-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+
+.why-grid > div {
+    text-align: center;
+    padding: 20px;
+}
+
+
+.why-grid span {
+    display: block;
+    font-size: 42px;
+    color: var(--orange);
+    margin-bottom: 15px;
+}
+
+
+.why-grid h3 {
+    font-family: "Inter";
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+
+.why-grid p {
+    font-size: 13px;
+    color: #626870;
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   KONTAKT
+======================================== */
+
+.contact {
+    background:
+        linear-gradient(
+            110deg,
+            var(--orange) 0%,
+            var(--orange) 37%,
+            #14171b 37%,
+            #14171b 100%
+        );
+
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+
+    padding: 55px 7%;
+    gap: 70px;
+}
+
+
+.contact-title h2 {
+    font-size: 42px;
+    line-height: 1;
+}
+
+
+.contact-title p {
+    margin-top: 16px;
+}
+
+
+.contact-information {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+
+    align-items: center;
+}
+
+
+.contact-information div {
+    border-left: 1px solid #4b4e53;
+    padding-left: 22px;
+}
+
+
+.contact-information span {
+    display: block;
+
+    color: var(--orange);
+
+    font-size: 10px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+
+.contact-information strong {
+    font-size: 13px;
+    color: #d4d7da;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    background: #070809;
+
+    padding: 35px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.footer-logo {
+    font-family: "Barlow Condensed";
+    font-size: 28px;
+    font-weight: 800;
+}
+
+
+footer p {
+    font-size: 11px;
+    color: #777d84;
+}
+
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+
+.footer-links a {
+    font-size: 11px;
+    color: #aaa;
+}
+
+
+.footer-links a:hover {
+    color: var(--orange);
+}
+
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 1050px) {
+
+    .navigation {
+        gap: 16px;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .advantages {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .advantage:nth-child(2) {
+        border-right: none;
+    }
+
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    .header {
+        padding: 0 5%;
+        height: 75px;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .header-button {
+        padding: 12px 15px;
+        font-size: 10px;
+    }
+
+    .logo span {
+        font-size: 26px;
+    }
+
+    .hero {
+        min-height: 620px;
+        padding: 70px 7%;
+        background-position: 65% center;
+    }
+
+    .hero h1 {
+        font-size: 54px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .advantages {
+        grid-template-columns: 1fr;
+    }
+
+    .advantage {
+        border-right: none;
+        border-bottom: 1px solid #34383e;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image {
+        min-height: 350px;
+    }
+
+    .about-content {
+        padding: 70px 8%;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact {
+        grid-template-columns: 1fr;
+        background:
+            linear-gradient(
+                180deg,
+                var(--orange) 0%,
+                var(--orange) 40%,
+                #14171b 40%,
+                #14171b 100%
+            );
+    }
+
+    .contact-information {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
