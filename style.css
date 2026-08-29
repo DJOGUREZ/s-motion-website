@@ -691,6 +691,68 @@ footer p {
 
 
 @media (max-width: 750px) {
+   /* MOBILE: Leistungen */
+.service-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+    gap: 18px;
+}
+
+.service-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 28px 22px;
+    overflow: hidden;
+}
+
+.service-card h3,
+.service-card p,
+.service-card li {
+    overflow-wrap: anywhere;
+}
+
+
+/* MOBILE: Kontaktbereich */
+.contact {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding-left: var(--page-padding);
+    padding-right: var(--page-padding);
+    overflow: hidden;
+}
+
+.contact-information {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
+    gap: 0;
+}
+
+.contact-information div {
+    width: 100%;
+    max-width: 100%;
+    border-left: none;
+    border-top: 1px solid #4b4e53;
+    padding: 18px 0;
+    min-width: 0;
+}
+
+.contact-information strong {
+    display: block;
+    width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+   .services,
+.why,
+.about-content,
+.contact {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
 
     .header {
         padding: 0 5%;
