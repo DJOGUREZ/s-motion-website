@@ -27,6 +27,11 @@
             <a href="#warum">Warum S&Motion?</a>
             <a href="#kontakt">Kontakt</a>
         </nav>
+        <button class="menu-toggle" aria-label="Menü öffnen">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
 
         <a href="#kontakt" class="header-button">
             Anfrage stellen →
@@ -335,4 +340,20 @@
     </footer>
 
 </body>
+    <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('.navigation');
+
+    menuButton.addEventListener('click', () => {
+        navigation.classList.toggle('active');
+        menuButton.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.navigation a').forEach(link => {
+        link.addEventListener('click', () => {
+            navigation.classList.remove('active');
+            menuButton.classList.remove('active');
+        });
+    });
+</script>
 </html>
