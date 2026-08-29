@@ -15,6 +15,11 @@
     --white: #ffffff;
     --gray: #a7adb5;
     --light: #f2f3f5;
+
+    /* Einheitliches Seitenraster */
+    --page-padding: 6vw;
+    --max-width: 1440px;
+    --section-space: 90px;
 }
 
 
@@ -52,14 +57,20 @@ h3 {
     font-family: "Barlow Condensed", Arial, sans-serif;
 }
 
+main {
+    width: 100%;
+}
 
+section {
+    width: 100%;
+}
 /* ========================================
    NAVIGATION
 ======================================== */
 
 .header {
     height: 88px;
-    padding: 0 6%;
+    padding: 0 var(--page-padding);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -135,7 +146,9 @@ h3 {
 ======================================== */
 
 .hero {
-    min-height: 650px;
+    min-height: 680px;
+    height: calc(100vh - 88px);
+    max-height: 850px;
 
     display: flex;
     align-items: center;
@@ -146,23 +159,27 @@ h3 {
         linear-gradient(
             90deg,
             rgba(5, 6, 8, 0.98) 0%,
-            rgba(5, 6, 8, 0.90) 35%,
-            rgba(5, 6, 8, 0.35) 70%,
-            rgba(5, 6, 8, 0.10) 100%
+            rgba(5, 6, 8, 0.90) 32%,
+            rgba(5, 6, 8, 0.50) 58%,
+            rgba(5, 6, 8, 0.15) 100%
         ),
         url("images/industrie.jpg");
 
     background-size: cover;
-    background-position: center;
+    background-position: center center;
+    background-repeat: no-repeat;
 
-    padding: 90px 7%;
+    padding: 80px var(--page-padding);
 }
 
 
 .hero-content {
     position: relative;
     z-index: 2;
+
+    width: 100%;
     max-width: 680px;
+
 }
 
 
@@ -253,7 +270,7 @@ h3 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 
-    padding: 35px 7%;
+    padding: 35px var(--page-padding);
 }
 
 
@@ -301,7 +318,7 @@ h3 {
     background: #f3f4f5;
     color: #17191c;
 
-    padding: 90px 7%;
+    padding: var(--section-space) var(--page-padding);
 }
 
 
@@ -331,8 +348,10 @@ h3 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-}
 
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
 
 .service-card {
     background: white;
@@ -340,7 +359,11 @@ h3 {
 
     border-bottom: 4px solid transparent;
 
-    min-height: 330px;
+    min-height: 350px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
 
     transition: 0.3s;
 }
@@ -402,28 +425,35 @@ h3 {
 .about {
     background: #0d1014;
 
-    min-height: 500px;
-
     display: grid;
     grid-template-columns: 1fr 1fr;
+
+    min-height: 580px;
 }
 
-
 .about-image {
+    min-height: 580px;
+
     background:
         linear-gradient(
-            rgba(0,0,0,0.15),
-            rgba(0,0,0,0.45)
+            rgba(0,0,0,0.10),
+            rgba(0,0,0,0.30)
         ),
         url("images/industrie-team.jpg");
 
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 
+
 .about-content {
-    padding: 90px 10%;
+    padding: var(--section-space) var(--page-padding);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 
@@ -454,19 +484,17 @@ h3 {
     background: white;
     color: #16191d;
 
-    padding: 90px 7%;
+    padding: var(--section-space) var(--page-padding);
 }
 
-
 .why-grid {
-    max-width: 1100px;
-    margin: auto;
+    max-width: var(--max-width);
+    margin: 0 auto;
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
 }
-
 
 .why-grid > div {
     text-align: center;
@@ -513,7 +541,7 @@ h3 {
     display: grid;
     grid-template-columns: 1fr 1.4fr;
 
-    padding: 55px 7%;
+    padding: 65px var(--page-padding);
     gap: 70px;
 }
 
@@ -568,7 +596,7 @@ h3 {
 footer {
     background: #070809;
 
-    padding: 35px 7%;
+    padding: 35px var(--page-padding);
 
     display: flex;
     align-items: center;
@@ -635,7 +663,10 @@ footer p {
     transition: 0.3s ease;
 }
 @media (max-width: 1050px) {
-
+:root {
+    --page-padding: 6%;
+    --section-space: 65px;
+}
     .navigation {
         gap: 16px;
     }
@@ -719,9 +750,14 @@ footer p {
     width: 130px;
 }
     .hero {
-        min-height: 620px;
-        padding: 70px 7%;
-        background-position: 65% center;
+    height: auto;
+    min-height: 620px;
+    max-height: none;
+
+    padding: 70px var(--page-padding);
+
+    background-position: 62% center;
+
     }
 
     .hero h1 {
@@ -746,9 +782,17 @@ footer p {
         grid-template-columns: 1fr;
     }
 
-    .about {
-        grid-template-columns: 1fr;
-    }
+   .about {
+    grid-template-columns: 1fr;
+}
+
+.about-image {
+    min-height: 380px;
+}
+
+.about-content {
+    padding: 65px var(--page-padding);
+}
 
     .about-image {
         min-height: 350px;
