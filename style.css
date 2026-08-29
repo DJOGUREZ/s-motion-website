@@ -80,26 +80,16 @@ h3 {
 }
 
 
-.logo span {
-    font-family: "Barlow Condensed", sans-serif;
-    font-size: 34px;
-    font-weight: 800;
-    letter-spacing: 1px;
+.logo {
+    display: flex;
+    align-items: center;
 }
 
-
-.logo span::first-letter {
-    color: white;
+.logo img {
+    width: 165px;
+    height: auto;
+    display: block;
 }
-
-
-.logo small {
-    color: var(--gray);
-    margin-top: 5px;
-    font-size: 11px;
-    letter-spacing: 1px;
-}
-
 
 .navigation {
     display: flex;
@@ -663,10 +653,9 @@ footer p {
         font-size: 10px;
     }
 
-    .logo span {
-        font-size: 26px;
-    }
-
+   .logo img {
+    width: 130px;
+}
     .hero {
         min-height: 620px;
         padding: 70px 7%;
