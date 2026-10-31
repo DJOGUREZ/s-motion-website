@@ -218,6 +218,111 @@ footer p { color: #777d84; font-size: 11px; }
     *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
 
+/* Vertical conveyor scrollbar */
+.conveyor-scroll {
+    --belt-progress: 0%;
+    position: fixed;
+    top: 108px;
+    right: 12px;
+    bottom: 22px;
+    z-index: 900;
+    width: 34px;
+    pointer-events: none;
+    filter: drop-shadow(0 4px 9px rgba(0,0,0,.48));
+}
+.conveyor-scroll[hidden] { display: none; }
+.conveyor-scroll__track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 18px;
+    background: rgba(8,9,11,.82);
+    overflow: hidden;
+}
+.conveyor-scroll__track::before,
+.conveyor-scroll__track::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    z-index: 2;
+    width: 20px;
+    height: 5px;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    background: #c9cdd1;
+    box-shadow: inset 0 -1px 1px rgba(0,0,0,.55);
+}
+.conveyor-scroll__track::before { top: 9px; }
+.conveyor-scroll__track::after { bottom: 9px; }
+.conveyor-scroll__belt {
+    position: absolute;
+    inset: 19px 7px;
+    border-inline: 2px solid #3a3e44;
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(255,114,0,.78) 0 12px,
+            rgba(255,143,45,.76) 12px 15px,
+            transparent 15px 23px
+        );
+    opacity: .58;
+}
+.conveyor-scroll__progress {
+    position: absolute;
+    top: 19px;
+    left: 7px;
+    right: 7px;
+    height: calc((100% - 38px) * var(--belt-progress) / 100);
+    max-height: calc(100% - 38px);
+    background: linear-gradient(to bottom,rgba(255,114,0,.08),rgba(255,114,0,.32));
+}
+.conveyor-scroll__wheel {
+    --wheel-rotation: 0deg;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 4;
+    width: 32px;
+    height: 32px;
+    transform: translateX(-50%);
+    border: 3px solid #ff7200;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at center,#111 0 18%,#ff7200 20% 34%,#111 36% 55%,#ff7200 57% 100%);
+    cursor: grab;
+    pointer-events: auto;
+    touch-action: none;
+}
+.conveyor-scroll__wheel::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border: 2px solid rgba(255,165,86,.72);
+    border-radius: inherit;
+    transform: rotate(var(--wheel-rotation));
+    background:
+        conic-gradient(from 0deg,transparent 0 10deg,rgba(8,9,11,.8) 10deg 19deg,transparent 19deg 55deg,rgba(8,9,11,.8) 55deg 64deg,transparent 64deg 100deg,rgba(8,9,11,.8) 100deg 109deg,transparent 109deg 145deg,rgba(8,9,11,.8) 145deg 154deg,transparent 154deg 190deg,rgba(8,9,11,.8) 190deg 199deg,transparent 199deg 235deg,rgba(8,9,11,.8) 235deg 244deg,transparent 244deg 280deg,rgba(8,9,11,.8) 280deg 289deg,transparent 289deg 325deg,rgba(8,9,11,.8) 325deg 334deg,transparent 334deg);
+}
+.conveyor-scroll__wheel span {
+    position: absolute;
+    inset: 9px;
+    border: 2px solid #15171a;
+    border-radius: 50%;
+    background: #ff7200;
+}
+.conveyor-scroll__wheel:hover,
+.conveyor-scroll__wheel.is-dragging { box-shadow: 0 0 0 4px rgba(255,114,0,.2),0 0 18px rgba(255,114,0,.55); }
+.conveyor-scroll__wheel.is-dragging { cursor: grabbing; }
+body.conveyor-dragging { user-select: none; cursor: grabbing; }
+
+@media (max-width: 899px) {
+    .conveyor-scroll { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .conveyor-scroll__wheel::before { transform: none !important; }
+}
+
 /* Legal pages */
 .legal-main { background: #f3f4f5; color: #17191c; }
 .legal-hero { padding: clamp(70px,8vw,110px) var(--page-padding) 46px; background: #101317; color: var(--white); }
