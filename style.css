@@ -203,7 +203,25 @@ footer p { color: #777d84; font-size: 11px; }
     .service-card { width: 100%; min-height: 0; padding: 30px 24px; }
     .why-grid>div { padding: 20px 8px; }
     .about-image { min-height: 330px; }
-    .sector-list article { padding: 21px 20px; gap: 16px; }
+    .sectors-intro h2 {
+        font-size: clamp(30px, 9vw, 38px);
+        line-height: 1;
+        overflow-wrap: anywhere;
+        hyphens: auto;
+    }
+    .sectors-intro>p:not(.eyebrow) { font-size: 14px; line-height: 1.65; }
+    .service-area { max-width: 100%; padding: 10px 12px; font-size: 9px; letter-spacing: 1.1px; }
+    .sector-list article { padding: 19px 16px; gap: 13px; }
+    .sector-list span { flex: 0 0 auto; font-size: 21px; }
+    .sector-list h3 {
+        min-width: 0;
+        font-size: 18px;
+        line-height: 1.08;
+        overflow-wrap: anywhere;
+        hyphens: auto;
+    }
+    .systems { padding: 24px 20px; }
+    .systems h3 { font-size: 21px; }
     .faq-list summary { padding-block: 22px; padding-right: 48px; }
     .faq-list details p { padding-right: 0; }
     .about-content { padding: 64px var(--page-padding); }
