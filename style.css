@@ -94,10 +94,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .contact-title, .contact-information, .contact-information div { min-width: 0; }
 .contact-title h2 { font-size: clamp(36px,3.2vw,48px); line-height: 1; }
 .contact-title p { margin-top: 16px; }
-.contact-information { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px 25px; align-items: center; }
+.contact-information { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 28px 25px; align-items: center; }
 .contact-information div { padding-left: 22px; border-left: 1px solid #4b4e53; }
 .contact-information span { display: block; margin-bottom: 8px; color: var(--orange); font-size: 10px; font-weight: 700; }
 .contact-information strong { display: block; color: #d4d7da; font-size: 13px; line-height: 1.45; overflow-wrap: anywhere; }
+.contact-person + .contact-person { margin-top: 14px; }
+.contact-person a { display: block; margin-top: 3px; color: var(--white); font-weight: 600; }
 .contact-information a { transition: color .2s ease; }
 .contact-information a:hover, .contact-information a:focus-visible { color: var(--orange); }
 
