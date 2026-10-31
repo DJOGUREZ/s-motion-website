@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "s-motion-industrieservice.com"
+        }
+      ],
+      "destination": "https://www.s-motion-industrieservice.com/:path*",
+      "permanent": true
+    }
+  ]
+}
