@@ -254,3 +254,51 @@ footer p { color: #777d84; font-size: 11px; }
 .legal-note { padding: 20px; border-left: 4px solid var(--orange); background: #fff; }
 .legal-back { display: inline-flex; margin-top: 28px; color: var(--orange); font-size: 12px; font-weight: 700; text-transform: uppercase; }
 @media (max-width:600px) { .legal-hero h1 { font-size: clamp(34px,10vw,46px); } .legal-content { padding-block: 44px 68px; } .legal-content h2 { font-size: 26px; } }
+
+
+/* SEO service detail pages */
+.service-link { margin-top: auto; padding-top: 24px; color: #c85500; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .7px; }
+.service-link:hover, .service-link:focus-visible { color: #17191c; }
+.service-detail { background: #f3f4f5; color: #17191c; }
+.detail-hero { padding: clamp(72px,9vw,128px) var(--page-padding) clamp(62px,7vw,96px); background: linear-gradient(110deg,rgba(8,9,11,.94),rgba(8,9,11,.76)),url("images/industrie.jpg") center/cover no-repeat; color: var(--white); }
+.detail-hero-inner, .detail-content, .detail-related, .detail-cta { width: 100%; max-width: var(--content-width); margin-inline: auto; }
+.breadcrumbs { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 48px; color: #aeb3b9; font-size: 12px; }
+.breadcrumbs a:hover, .breadcrumbs a:focus-visible { color: var(--orange); }
+.detail-hero h1 { max-width: 950px; font-size: clamp(50px,7vw,94px); line-height: .9; overflow-wrap: anywhere; }
+.detail-lead { max-width: 760px; margin: 28px 0 34px; color: #d2d5d9; font-size: clamp(17px,2vw,21px); line-height: 1.65; }
+.detail-hero .button { width: auto; }
+.detail-content { padding: var(--section-space) var(--page-padding); }
+.detail-block { display: grid; grid-template-columns: 90px minmax(0,1fr); gap: 35px; padding: 48px 0; border-bottom: 1px solid #cfd2d6; }
+.detail-block:first-child { padding-top: 0; }
+.detail-number { color: var(--orange); font-family: "Barlow Condensed",Arial,sans-serif; font-size: 42px; font-weight: 800; line-height: 1; }
+.detail-block h2 { max-width: 850px; margin-bottom: 20px; font-size: clamp(31px,4vw,50px); line-height: .98; }
+.detail-block p { max-width: 860px; color: #535860; font-size: 15px; line-height: 1.8; }
+.detail-block p + p { margin-top: 14px; }
+.detail-block ul { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px 22px; max-width: 900px; margin-top: 24px; list-style: none; }
+.detail-block li { padding: 14px 16px; background: var(--white); color: #3f454c; font-size: 14px; line-height: 1.45; border-left: 3px solid var(--orange); }
+.detail-related { padding: 0 var(--page-padding) var(--section-space); display: grid; grid-template-columns: minmax(0,1fr) minmax(280px,.8fr); gap: 60px; }
+.detail-related h2 { max-width: 650px; font-size: clamp(34px,4vw,52px); line-height: 1; }
+.detail-related-links { display: grid; align-content: start; }
+.detail-related-links a { padding: 18px 0; border-bottom: 1px solid #c9cdd1; color: #33383e; font-weight: 700; }
+.detail-related-links a:hover, .detail-related-links a:focus-visible { color: var(--orange); }
+.detail-cta { padding: 58px var(--page-padding); display: grid; grid-template-columns: minmax(0,1.2fr) minmax(280px,.8fr); gap: 55px; background: #15181d; color: var(--white); }
+.detail-cta h2 { max-width: 700px; font-size: clamp(34px,4vw,52px); line-height: 1; }
+.detail-cta p:not(.eyebrow) { max-width: 720px; margin-top: 20px; color: #b8bdc3; line-height: 1.7; }
+.detail-cta>div:last-child { display: grid; align-content: center; gap: 18px; }
+.detail-cta>div:last-child a { padding-left: 18px; border-left: 3px solid var(--orange); color: #b8bdc3; font-size: 13px; line-height: 1.55; overflow-wrap: anywhere; }
+.detail-cta strong { color: var(--white); font-size: 15px; }
+@media (max-width:820px) {
+ .detail-related, .detail-cta { grid-template-columns: 1fr; }
+ .detail-nav { margin-left: 0; }
+}
+@media (max-width:600px) {
+ .detail-hero { padding-top: 62px; }
+ .detail-hero h1 { font-size: clamp(42px,13vw,62px); }
+ .detail-hero .button { width: 100%; }
+ .breadcrumbs { margin-bottom: 34px; }
+ .detail-block { grid-template-columns: 1fr; gap: 14px; padding: 36px 0; }
+ .detail-number { font-size: 30px; }
+ .detail-block ul { grid-template-columns: 1fr; }
+ .detail-related { gap: 32px; }
+ .detail-cta { padding: 48px 20px; gap: 34px; }
+}
