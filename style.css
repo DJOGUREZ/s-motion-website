@@ -188,6 +188,14 @@ footer p { color: #777d84; font-size: 11px; }
 @media (max-width: 600px) {
     :root { --page-padding: 20px; --section-space: 64px; }
     .hero { min-height: 620px; padding-block: 60px; }
+    .hero h1 {
+        font-size: clamp(34px, 10vw, 48px);
+        line-height: .96;
+        overflow-wrap: normal;
+        word-break: normal;
+        hyphens: manual;
+    }
+    .eyebrow { font-size: 11px; letter-spacing: 1.5px; }
     .hero-description { font-size: 16px; line-height: 1.6; }
     .hero-buttons { flex-direction: column; align-items: stretch; }
     .button { width: 100%; }
@@ -204,7 +212,8 @@ footer p { color: #777d84; font-size: 11px; }
     .sectors-intro h2 {
         font-size: clamp(30px, 9vw, 38px);
         line-height: 1;
-        overflow-wrap: anywhere;
+        overflow-wrap: break-word;
+        word-break: normal;
         hyphens: auto;
     }
     .sectors-intro>p:not(.eyebrow) { font-size: 14px; line-height: 1.65; }
@@ -214,7 +223,8 @@ footer p { color: #777d84; font-size: 11px; }
         min-width: 0;
         font-size: 18px;
         line-height: 1.08;
-        overflow-wrap: anywhere;
+        overflow-wrap: break-word;
+        word-break: normal;
         hyphens: auto;
     }
     .systems { padding: 24px 20px; }
@@ -226,6 +236,40 @@ footer p { color: #777d84; font-size: 11px; }
     .contact { padding-block: 54px; gap: 34px; background: linear-gradient(180deg,var(--orange) 0 38%,#14171b 38% 100%); }
     .contact-title h2 br { display: none; }
     footer { flex-direction: column; text-align: center; }
+
+    /* Prevent arbitrary mid-word breaks and horizontal layout shifts on phones. */
+    .section-heading h2,
+    .about h2,
+    .faq-intro h2,
+    .contact-title h2,
+    .legal-hero h1,
+    .legal-content h2,
+    .detail-block h2,
+    .detail-related h2,
+    .detail-cta h2 {
+        max-width: 100%;
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: auto;
+    }
+
+    .hero-content,
+    .detail-hero-inner,
+    .detail-block > div,
+    .detail-related > div,
+    .detail-cta > div,
+    .contact > div {
+        min-width: 0;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 380px) {
+    :root { --page-padding: 18px; }
+    .hero h1 { font-size: clamp(32px, 9.6vw, 38px); }
+    .hero-description { font-size: 15px; }
+    .button { padding-inline: 18px; }
+    .breadcrumbs { gap: 6px; font-size: 11px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -290,7 +334,14 @@ footer p { color: #777d84; font-size: 11px; }
 }
 @media (max-width:600px) {
  .detail-hero { padding-top: 62px; }
- .detail-hero h1 { font-size: clamp(42px,13vw,62px); }
+ .detail-hero h1 {
+   max-width: 100%;
+   font-size: clamp(34px,10.2vw,46px);
+   line-height: .96;
+   overflow-wrap: normal;
+   word-break: normal;
+   hyphens: manual;
+ }
  .detail-hero .button { width: 100%; }
  .breadcrumbs { margin-bottom: 34px; }
  .detail-block { grid-template-columns: 1fr; gap: 14px; padding: 36px 0; }
@@ -298,4 +349,10 @@ footer p { color: #777d84; font-size: 11px; }
  .detail-block ul { grid-template-columns: 1fr; }
  .detail-related { gap: 32px; }
  .detail-cta { padding: 48px 20px; gap: 34px; }
+}
+
+@media (max-width:380px) {
+ .detail-hero { padding-inline: 18px; }
+ .detail-hero h1 { font-size: clamp(32px,9.5vw,37px); }
+ .detail-lead { font-size: 16px; line-height: 1.55; }
 }
