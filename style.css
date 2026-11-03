@@ -123,6 +123,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .faq-list summary::after { content: "+"; position: absolute; top: 50%; right: 8px; width: 34px; height: 34px; display: grid; place-items: center; transform: translateY(-50%); background: var(--orange); color: var(--white); font-family: "Inter",Arial,sans-serif; font-size: 22px; font-weight: 400; transition: transform .2s ease,background .2s ease; }
 .faq-list details[open] summary::after { transform: translateY(-50%) rotate(45deg); background: #17191c; }
 .faq-list details p { max-width: 800px; padding: 0 56px 24px 0; color: #5b6168; font-size: 14px; line-height: 1.75; }
+.faq-list details p a { color: #c85500; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 
 .contact { padding: 65px var(--page-padding); display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.4fr); gap: clamp(40px,5vw,70px); background: linear-gradient(110deg,var(--orange) 0 37%,#14171b 37% 100%); }
 .contact-title, .contact-information, .contact-information div { min-width: 0; }
