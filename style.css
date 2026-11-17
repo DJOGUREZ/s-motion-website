@@ -235,9 +235,9 @@ footer p { color: #777d84; font-size: 11px; }
     .sectors-intro h2 {
         font-size: clamp(30px, 9vw, 38px);
         line-height: 1;
-        overflow-wrap: break-word;
+        overflow-wrap: normal;
         word-break: normal;
-        hyphens: auto;
+        hyphens: none;
     }
     .sectors-intro>p:not(.eyebrow) { font-size: 14px; line-height: 1.65; }
     .sector-list article { padding: 19px 16px; gap: 13px; }
@@ -256,7 +256,19 @@ footer p { color: #777d84; font-size: 11px; }
     .faq-list details p { padding-right: 0; }
     .about-content { padding: 64px var(--page-padding); }
     .about-content .button { align-self: stretch; }
-    .contact { padding-block: 54px; gap: 34px; background: linear-gradient(180deg,var(--orange) 0 38%,#14171b 38% 100%); }
+    .contact { position: relative; overflow: hidden; padding-block: 54px; gap: 34px; background: #14171b; }
+    .contact-title { position: relative; z-index: 0; padding-bottom: 34px; }
+    .contact-title::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: -54px;
+        right: -100vw;
+        bottom: 0;
+        left: -100vw;
+        background: var(--orange);
+    }
+    .contact-information { position: relative; z-index: 1; }
     .contact-title h2 br { display: none; }
     footer { flex-direction: column; text-align: center; }
 
