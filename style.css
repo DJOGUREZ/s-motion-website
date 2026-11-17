@@ -283,9 +283,9 @@ footer p { color: #777d84; font-size: 11px; }
     .detail-related h2,
     .detail-cta h2 {
         max-width: 100%;
-        overflow-wrap: break-word;
+        overflow-wrap: normal;
         word-break: normal;
-        hyphens: auto;
+        hyphens: none;
     }
 
     .hero-content,
